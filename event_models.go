@@ -69,6 +69,11 @@ func addEvent(event Event) (int, error) {
 //go:embed init-schema.sql
 var makeSchema string
 
+// The above comment causes the `init-schema.sql` file to be
+// embedded in the binary. See https://golang.org/pkg/embed/
+// The makeSchema variable is a string that contains the
+// contents of the `init-schema.sql` file.
+
 // init is run once when this file is first loaded. See
 // https://golang.org/doc/effective_go.html#init
 // https://medium.com/golangspec/init-functions-in-go-eac191b3860a
